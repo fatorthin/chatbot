@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      PrimeLedger Tax Consultancy | Navigating Complexity, Ensuring Compliance
+    </title>
+    <meta
+      name="description"
+      content="PrimeLedger Tax Consultancy helps businesses and individuals optimize tax outcomes, stay compliant, and make confident financial decisions."
+    />
+    <meta
+      name="keywords"
+      content="tax consultancy, tax planning, corporate tax, audit support, financial advisory"
+    />
+    <meta name="author" content="PrimeLedger Tax Consultancy" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "sans-serif"],
+            },
+            colors: {
+              navy: "#0f2744",
+              slate: "#425466",
+              cloud: "#f4f7fa",
+              skyline: "#dde6f0",
+              accent: "#2b5c8a",
+            },
+            boxShadow: {
+              soft: "0 10px 35px rgba(15, 39, 68, 0.12)",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body class="bg-white text-slate antialiased">
+    <div class="relative overflow-x-hidden" x-data="landingPage">
+      <header
+        class="sticky top-0 z-40 border-b border-skyline/70 bg-white/85 backdrop-blur transition-shadow"
+        :class="scrolled ? 'shadow-soft' : ''"
+      >
+        <nav
+          class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+          aria-label="Primary navigation"
+        >
+          <a href="#" class="text-xl font-extrabold tracking-tight text-navy"
+            >PrimeLedger</a
+          >
+          <ul class="hidden items-center gap-8 md:flex">
+            <li>
+              <a
+                class="font-semibold text-slate hover:text-navy"
+                href="#services"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-semibold text-slate hover:text-navy"
+                href="#testimonials"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-semibold text-slate hover:text-navy"
+                href="#contact"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <a
+            href="#contact"
+            class="hidden rounded-full bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-accent md:inline-block"
+            aria-label="Book a free consultation"
+            >Book Consultation</a
+          >
+          <button
+            type="button"
+            class="inline-flex rounded-lg border border-skyline p-2 text-navy md:hidden"
+            @click="mobileMenu = !mobileMenu"
+            :aria-expanded="mobileMenu"
+            aria-controls="mobile-menu"
+            aria-label="Toggle menu"
+          >
+            <svg
+              class="h-6 w-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </nav>
+        <div
+          id="mobile-menu"
+          class="border-t border-skyline/70 bg-white md:hidden"
+          x-show="mobileMenu"
+          x-transition
+          @click.away="mobileMenu = false"
+        >
+          <div class="space-y-1 px-4 py-4 sm:px-6">
+            <a
+              href="#services"
+              class="block rounded-md px-3 py-2 font-semibold text-slate hover:bg-cloud hover:text-navy"
+              >Services</a
+            >
+            <a
+              href="#testimonials"
+              class="block rounded-md px-3 py-2 font-semibold text-slate hover:bg-cloud hover:text-navy"
+              >Testimonials</a
+            >
+            <a
+              href="#contact"
+              class="block rounded-md px-3 py-2 font-semibold text-slate hover:bg-cloud hover:text-navy"
+              >Contact</a
+            >
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section
+          class="hero-radial relative isolate px-4 pb-20 pt-16 sm:px-6 lg:px-8"
+        >
+          <div
+            class="mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-2"
+          >
+            <div>
+              <p
+                class="mb-4 inline-flex rounded-full bg-navy/10 px-4 py-2 text-sm font-bold text-navy"
+              >
+                Trusted by 250+ businesses nationwide
+              </p>
+              <h1
+                class="text-balance text-4xl font-extrabold leading-tight text-navy sm:text-5xl lg:text-6xl"
+              >
+                Navigating Complexity, Ensuring Compliance.
+              </h1>
+              <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate">
+                PrimeLedger provides proactive tax strategy, rigorous
+                compliance, and executive-grade advisory to help you reduce risk
+                and unlock sustainable growth.
+              </p>
+              <div class="mt-10 flex flex-wrap gap-4">
+                <a
+                  href="#contact"
+                  class="rounded-full bg-navy px-7 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition hover:bg-accent"
+                  aria-label="Get started with PrimeLedger"
+                >
+                  Get Started
+                </a>
+                <a
+                  href="#services"
+                  class="rounded-full border border-skyline bg-white px-7 py-3.5 text-sm font-bold uppercase tracking-wide text-navy transition hover:border-navy"
+                  aria-label="Explore our tax services"
+                >
+                  Explore Services
+                </a>
+              </div>
+              <div class="mt-12 grid max-w-lg grid-cols-3 gap-4 text-sm">
+                <article
+                  class="rounded-2xl border border-skyline bg-white p-4 shadow-soft"
+                >
+                  <p class="text-2xl font-extrabold text-navy">18+</p>
+                  <p class="mt-1 font-semibold text-slate">Years Experience</p>
+                </article>
+                <article
+                  class="rounded-2xl border border-skyline bg-white p-4 shadow-soft"
+                >
+                  <p class="text-2xl font-extrabold text-navy">$80M+</p>
+                  <p class="mt-1 font-semibold text-slate">
+                    Client Tax Savings
+                  </p>
+                </article>
+                <article
+                  class="rounded-2xl border border-skyline bg-white p-4 shadow-soft"
+                >
+                  <p class="text-2xl font-extrabold text-navy">99%</p>
+                  <p class="mt-1 font-semibold text-slate">Retention Rate</p>
+                </article>
+              </div>
+            </div>
+
+            <aside
+              class="relative rounded-3xl border border-skyline bg-white p-7 shadow-soft"
+            >
+              <h2 class="text-xl font-extrabold text-navy">Why PrimeLedger?</h2>
+              <ul class="mt-6 space-y-5" aria-label="PrimeLedger value points">
+                <li class="flex gap-4">
+                  <span
+                    class="mt-1 inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-navy text-white"
+                    >✓</span
+                  >
+                  <div>
+                    <p class="font-bold text-navy">Regulatory Confidence</p>
+                    <p class="text-sm leading-relaxed text-slate">
+                      Stay aligned with evolving tax regulations through
+                      periodic risk reviews and compliance checkpoints.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex gap-4">
+                  <span
+                    class="mt-1 inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-navy text-white"
+                    >✓</span
+                  >
+                  <div>
+                    <p class="font-bold text-navy">
+                      Strategic Tax Optimization
+                    </p>
+                    <p class="text-sm leading-relaxed text-slate">
+                      We identify lawful savings opportunities and align your
+                      tax strategy with long-term business goals.
+                    </p>
+                  </div>
+                </li>
+                <li class="flex gap-4">
+                  <span
+                    class="mt-1 inline-flex h-7 w-7 flex-none items-center justify-center rounded-full bg-navy text-white"
+                    >✓</span
+                  >
+                  <div>
+                    <p class="font-bold text-navy">Dedicated Advisory Team</p>
+                    <p class="text-sm leading-relaxed text-slate">
+                      Access tax experts, former auditors, and financial
+                      advisors in one integrated service model.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        <section
+          id="services"
+          class="bg-cloud px-4 py-20 sm:px-6 lg:px-8"
+          aria-labelledby="services-heading"
+        >
+          <div class="mx-auto w-full max-w-7xl">
+            <h2
+              id="services-heading"
+              class="text-center text-3xl font-extrabold text-navy sm:text-4xl"
+            >
+              Specialized Tax & Advisory Services
+            </h2>
+            <p class="mx-auto mt-4 max-w-2xl text-center text-slate">
+              Comprehensive expertise designed for business owners, finance
+              leaders, and growth-stage enterprises.
+            </p>
+            <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              <article
+                class="rounded-2xl border border-skyline bg-white p-6 shadow-soft"
+              >
+                <div
+                  class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-navy/10 text-navy"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 1v22M17 5H9a3 3 0 000 6h6a3 3 0 010 6H6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold text-navy">Tax Planning</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate">
+                  Forward-looking strategies to minimize liabilities, preserve
+                  cash flow, and support growth milestones.
+                </p>
+              </article>
+              <article
+                class="rounded-2xl border border-skyline bg-white p-6 shadow-soft"
+              >
+                <div
+                  class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-navy/10 text-navy"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M9 17v-6m6 6V7m6 13H3a2 2 0 01-2-2V6a2 2 0 012-2h18a2 2 0 012 2v12a2 2 0 01-2 2z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold text-navy">Corporate Tax</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate">
+                  End-to-end corporate compliance, filings, and
+                  jurisdiction-specific tax structuring support.
+                </p>
+              </article>
+              <article
+                class="rounded-2xl border border-skyline bg-white p-6 shadow-soft"
+              >
+                <div
+                  class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-navy/10 text-navy"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M9 12l2 2 4-4m5 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold text-navy">Audit Support</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate">
+                  Prepared responses, documentation reviews, and representation
+                  through complex audit cycles.
+                </p>
+              </article>
+              <article
+                class="rounded-2xl border border-skyline bg-white p-6 shadow-soft"
+              >
+                <div
+                  class="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-navy/10 text-navy"
+                  aria-hidden="true"
+                >
+                  <svg
+                    class="h-6 w-6"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M3 3v18h18M7 14l3-3 3 2 4-5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <h3 class="text-lg font-bold text-navy">Financial Advisory</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate">
+                  Data-backed guidance for investment planning, cash strategy,
+                  and financial risk management.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="testimonials"
+          class="px-4 py-20 sm:px-6 lg:px-8"
+          aria-labelledby="testimonials-heading"
+        >
+          <div class="mx-auto w-full max-w-7xl">
+            <h2
+              id="testimonials-heading"
+              class="text-center text-3xl font-extrabold text-navy sm:text-4xl"
+            >
+              Trusted by Decision Makers
+            </h2>
+            <div class="mt-12 grid gap-6 lg:grid-cols-3">
+              <blockquote
+                class="rounded-2xl border border-skyline bg-white p-6 shadow-soft"
+              >
+                <p class="text-sm leading-relaxed text-slate">
+                  "PrimeLedger transformed how we handle tax risk. Their
+                  strategic planning delivered measurable savings in year one."
+                </p>
+                <footer class="mt-5 text-sm font-bold text-navy">
+                  A. Rahman, CFO, Nexa Manufacturing
+                </footer>
+              </blockquote>
+              <blockquote
+                class="rounded-2xl border border-skyline bg-white p-6 shadow-soft"
+              >
+                <p class="text-sm leading-relaxed text-slate">
+                  "The audit support team was exceptional. We navigated a
+                  complex review with confidence and zero penalties."
+                </p>
+                <footer class="mt-5 text-sm font-bold text-navy">
+                  L. Tan, Director of Finance, Solvix Group
+                </footer>
+              </blockquote>
+              <blockquote
+                class="rounded-2xl border border-skyline bg-white p-6 shadow-soft"
+              >
+                <p class="text-sm leading-relaxed text-slate">
+                  "Professional, responsive, and deeply knowledgeable.
+                  PrimeLedger has become a core advisory partner for our board."
+                </p>
+                <footer class="mt-5 text-sm font-bold text-navy">
+                  M. Prasetyo, CEO, Atlas Retail Labs
+                </footer>
+              </blockquote>
+            </div>
+            <div class="mt-12 rounded-2xl border border-skyline bg-cloud p-6">
+              <p
+                class="text-center text-sm font-bold uppercase tracking-[0.18em] text-slate"
+              >
+                Trusted By
+              </p>
+              <div
+                class="mt-6 grid grid-cols-2 gap-4 text-center sm:grid-cols-4"
+              >
+                <div
+                  class="rounded-xl border border-skyline bg-white px-4 py-3 font-extrabold text-navy"
+                >
+                  NOVATEX
+                </div>
+                <div
+                  class="rounded-xl border border-skyline bg-white px-4 py-3 font-extrabold text-navy"
+                >
+                  GRANDIS
+                </div>
+                <div
+                  class="rounded-xl border border-skyline bg-white px-4 py-3 font-extrabold text-navy"
+                >
+                  FLEXORA
+                </div>
+                <div
+                  class="rounded-xl border border-skyline bg-white px-4 py-3 font-extrabold text-navy"
+                >
+                  PIVOTRA
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          class="bg-navy px-4 py-20 sm:px-6 lg:px-8"
+          aria-labelledby="contact-heading"
+        >
+          <div
+            class="mx-auto grid w-full max-w-7xl gap-12 lg:grid-cols-2 lg:items-start"
+          >
+            <div>
+              <h2
+                id="contact-heading"
+                class="text-3xl font-extrabold text-white sm:text-4xl"
+              >
+                Talk to a Tax Specialist
+              </h2>
+              <p class="mt-4 max-w-xl text-cloud">
+                Share your business context and goals. Our consultants will
+                reach out with a tailored action plan.
+              </p>
+              <ul
+                class="mt-8 space-y-3 text-cloud"
+                aria-label="Contact highlights"
+              >
+                <li class="flex items-center gap-3">
+                  <span class="font-black">•</span> Initial consultation within
+                  24 business hours
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="font-black">•</span> Strict data confidentiality
+                  and secure handling
+                </li>
+                <li class="flex items-center gap-3">
+                  <span class="font-black">•</span> Customized tax and
+                  compliance roadmap
+                </li>
+              </ul>
+            </div>
+            <form
+              class="rounded-3xl bg-white p-6 shadow-soft sm:p-8"
+              @submit.prevent="submitForm"
+              novalidate
+              aria-label="Contact form"
+            >
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label
+                    for="name"
+                    class="mb-2 block text-sm font-bold text-navy"
+                    >Full Name</label
+                  >
+                  <input
+                    id="name"
+                    type="text"
+                    x-model.trim="form.name"
+                    class="w-full rounded-xl border border-skyline px-4 py-3 text-sm text-slate outline-none transition focus:border-navy"
+                    placeholder="John Carter"
+                    aria-required="true"
+                    :aria-invalid="errors.name ? 'true' : 'false'"
+                  />
+                  <p
+                    class="mt-1 text-xs font-semibold text-red-600"
+                    x-text="errors.name"
+                  ></p>
+                </div>
+                <div>
+                  <label
+                    for="email"
+                    class="mb-2 block text-sm font-bold text-navy"
+                    >Work Email</label
+                  >
+                  <input
+                    id="email"
+                    type="email"
+                    x-model.trim="form.email"
+                    class="w-full rounded-xl border border-skyline px-4 py-3 text-sm text-slate outline-none transition focus:border-navy"
+                    placeholder="john@company.com"
+                    aria-required="true"
+                    :aria-invalid="errors.email ? 'true' : 'false'"
+                  />
+                  <p
+                    class="mt-1 text-xs font-semibold text-red-600"
+                    x-text="errors.email"
+                  ></p>
+                </div>
+              </div>
+              <div class="mt-4">
+                <label
+                  for="company"
+                  class="mb-2 block text-sm font-bold text-navy"
+                  >Company</label
+                >
+                <input
+                  id="company"
+                  type="text"
+                  x-model.trim="form.company"
+                  class="w-full rounded-xl border border-skyline px-4 py-3 text-sm text-slate outline-none transition focus:border-navy"
+                  placeholder="Prime Holdings Ltd"
+                />
+              </div>
+              <div class="mt-4">
+                <label
+                  for="message"
+                  class="mb-2 block text-sm font-bold text-navy"
+                  >How can we help?</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  x-model.trim="form.message"
+                  class="w-full resize-none rounded-xl border border-skyline px-4 py-3 text-sm text-slate outline-none transition focus:border-navy"
+                  placeholder="Tell us your current tax challenges and goals..."
+                  aria-required="true"
+                  :aria-invalid="errors.message ? 'true' : 'false'"
+                ></textarea>
+                <p
+                  class="mt-1 text-xs font-semibold text-red-600"
+                  x-text="errors.message"
+                ></p>
+              </div>
+              <div class="mt-4">
+                <label
+                  class="flex items-start gap-3 text-sm text-slate"
+                  for="consent"
+                >
+                  <input
+                    id="consent"
+                    type="checkbox"
+                    x-model="form.consent"
+                    class="mt-0.5 h-4 w-4 rounded border-skyline text-navy focus:ring-navy"
+                    aria-required="true"
+                    :aria-invalid="errors.consent ? 'true' : 'false'"
+                  />
+                  <span
+                    >I agree to be contacted by PrimeLedger regarding tax
+                    consultancy services.</span
+                  >
+                </label>
+                <p
+                  class="mt-1 text-xs font-semibold text-red-600"
+                  x-text="errors.consent"
+                ></p>
+              </div>
+              <button
+                type="submit"
+                class="mt-6 w-full rounded-xl bg-navy px-6 py-3.5 text-sm font-extrabold uppercase tracking-wide text-white transition hover:bg-accent"
+                aria-label="Submit contact request"
+              >
+                Request Consultation
+              </button>
+              <p
+                class="mt-4 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-700"
+                x-show="submitted"
+                x-transition
+                role="status"
+                aria-live="polite"
+              >
+                Thank you. Your request has been received. Our team will contact
+                you shortly.
+              </p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer
+        class="border-t border-skyline bg-white px-4 py-8 text-center text-sm text-slate sm:px-6 lg:px-8"
+      >
+        <p>
+          <span id="current-year"></span> PrimeLedger Tax Consultancy. All
+          rights reserved.
+        </p>
+      </footer>
+
+      <aside
+        class="fixed bottom-5 right-5 z-50 sm:bottom-6 sm:right-6"
+        aria-label="Chatbot widget"
+      >
+        <div class="relative" @keydown.escape.window="closeChat()">
+          <section
+            id="chatbot-panel"
+            x-show="chatOpen"
+            x-cloak
+            x-transition.origin.bottom.right
+            @click.away="closeChat()"
+            class="mb-4 flex h-[32rem] w-[22rem] flex-col overflow-hidden rounded-2xl border border-skyline bg-white shadow-soft sm:h-[38rem] sm:w-[26rem] md:h-[42rem] md:w-[28rem]"
+            role="dialog"
+            aria-label="Chatbot panel"
+            aria-modal="false"
+          >
+            <header
+              class="flex items-center justify-between border-b border-skyline bg-navy px-4 py-3"
+            >
+              <p class="text-sm font-bold text-white">PrimeLedger Assistant</p>
+              <button
+                type="button"
+                class="rounded-md px-2 py-1 text-xs font-bold text-white hover:bg-white/20"
+                @click="closeChat()"
+                aria-label="Close chatbot"
+              >
+                Close
+              </button>
+            </header>
+            <div
+              id="chatbot-container"
+              class="flex h-[calc(100%-3.1rem)] flex-col"
+              aria-label="Chatbot container"
+            >
+              <div
+                id="chat-messages"
+                class="flex-1 overflow-y-auto space-y-3 bg-cloud p-4"
+                x-ref="chatMessages"
+                aria-live="polite"
+                aria-label="Chat messages"
+              >
+                <template x-if="chatMessages.length === 0">
+                  <div class="flex justify-start">
+                    <div
+                      class="max-w-[85%] rounded-2xl rounded-tl-sm border border-skyline bg-white px-4 py-3 text-sm leading-relaxed text-slate shadow-sm"
+                    >
+                      Halo! Saya asisten PrimeLedger. Ada yang bisa saya bantu
+                      terkait konsultasi pajak?
+                    </div>
+                  </div>
+                </template>
+                <template x-for="(msg, i) in chatMessages" :key="i">
+                  <div
+                    class="flex"
+                    :class="msg.role === 'user' ? 'justify-end' : 'justify-start'"
+                  >
+                    <div
+                      class="max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed shadow-sm"
+                      :class="msg.role === 'user' ? 'rounded-br-sm bg-navy text-white' : 'rounded-bl-sm border border-skyline bg-white text-slate'"
+                      x-text="msg.text"
+                    ></div>
+                  </div>
+                </template>
+                <template x-if="chatLoading">
+                  <div class="flex justify-start">
+                    <div
+                      class="rounded-2xl rounded-bl-sm border border-skyline bg-white px-3 py-2.5 shadow-sm"
+                    >
+                      <span
+                        class="chat-typing"
+                        aria-label="Bot sedang mengetik"
+                      >
+                        <span></span><span></span><span></span>
+                      </span>
+                    </div>
+                  </div>
+                </template>
+              </div>
+              <form
+                class="flex items-center gap-2 border-t border-skyline bg-white px-4 py-3"
+                @submit.prevent="sendChatMessage()"
+                aria-label="Chat input form"
+              >
+                <input
+                  type="text"
+                  x-model.trim="chatInput"
+                  :disabled="chatLoading"
+                  class="flex-1 rounded-full border border-skyline bg-cloud px-4 py-2.5 text-sm text-slate outline-none transition focus:border-navy disabled:opacity-50"
+                  placeholder="Ketik pesan..."
+                  aria-label="Pesan"
+                  autocomplete="off"
+                />
+                <button
+                  type="submit"
+                  :disabled="chatLoading || !chatInput"
+                  class="flex h-9 w-9 flex-none items-center justify-center rounded-full bg-navy text-white transition hover:bg-accent disabled:opacity-40"
+                  aria-label="Kirim pesan"
+                >
+                  <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <button
+            id="chatbot-launcher"
+            type="button"
+            class="flex h-16 w-16 items-center justify-center rounded-2xl border border-skyline bg-white text-navy shadow-soft transition hover:scale-105 sm:h-20 sm:w-20"
+            @click="toggleChat()"
+            :aria-expanded="chatOpen"
+            aria-controls="chatbot-panel"
+            aria-label="Open chatbot"
+          >
+            <svg
+              x-show="!chatOpen"
+              class="h-8 w-8"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              aria-hidden="true"
+            >
+              <path
+                d="M8 10h8M8 14h5M5 19l1.5-3H6a3 3 0 01-3-3V7a3 3 0 013-3h12a3 3 0 013 3v6a3 3 0 01-3 3h-7.5L5 19z"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg
+              x-show="chatOpen"
+              x-cloak
+              class="h-8 w-8"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <path
+                d="M6 6l12 12M18 6L6 18"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>

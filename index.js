@@ -3,6 +3,7 @@ import "dotenv/config";
 import express from "express";
 import multer from "multer";
 import fs from "fs/promises";
+import cors from "cors";
 
 const app = express();
 const upload = multer();
@@ -13,10 +14,9 @@ const ai = new GoogleGenAI({
 
 const model = "gemini-3-flash-preview";
 
+app.use(cors());
 app.use(express.json());
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+app.use(express.static("public"));
 
 app.post("/generate-text", async (req, res) => {
   try {
@@ -58,12 +58,34 @@ app.post("/generate-from-image", upload.single("image"), async (req, res) => {
   }
 });
 
-// async function main() {
-//   const response = await ai.models.generateContent({
-//     model: "gemini-3-flash-preview",
-//     contents: "calculate 5 + 3",
-//   });
-//   console.log(response.text);
-// }
+app.post("/api/chat", async (req, res) => {
+  const { conversation } = req.body;
 
-// main();
+  try {
+    if (!Array.isArray(conversation))
+      throw new Error("Conversation must be an array of messages");
+
+    const contents = conversation.map(({ role, text }) => ({
+      role,
+      parts: [{ text }],
+    }));
+
+    const response = await ai.models.generateContent({
+      model,
+      contents,
+      config: {
+        temperature: 0.7,
+        systemInstruction:
+          "Jawab hanya menggunakan bahasa Indonesia. Jangan menjawab dengan bahasa lain.",
+      },
+    });
+    res.status(200).json({ result: response.text });
+  } catch (error) {
+    console.error("Error generating chat response:", error);
+    res.status(500).json({ error: "Failed to generate chat response" });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
